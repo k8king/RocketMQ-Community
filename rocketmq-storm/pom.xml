@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rocketmq.community</groupId>
-	<artifactId>rocketmq-storm</artifactId>
+	<artifactId>RocketMQ-Community</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

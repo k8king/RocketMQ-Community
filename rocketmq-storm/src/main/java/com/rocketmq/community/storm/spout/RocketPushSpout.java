@@ -84,7 +84,7 @@ public class RocketPushSpout extends BaseRichSpout {
 		this.consumer.setInstanceName(UUID.randomUUID().toString());
 		this.consumer.setNamesrvAddr(nameServer);
 		this.consumer.subscribe(topic,"*");	
-        consumer.registerMessageListener(new MessageListenerConcurrently() {
+		this.consumer.registerMessageListener(new MessageListenerConcurrently() {
 			@Override
         	public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                  RocketPushSpout.this.id2wrapperMap.put(msgs.get(0).getMsgId(), msgs);
@@ -104,16 +104,13 @@ public class RocketPushSpout extends BaseRichSpout {
 	public void nextTuple() {
 
 		if (this.consumer != null) {
-            try {
-
-                final List<MessageExt> msgs = this.messageQueue.poll(WAIT_FOR_NEXT_MESSAGE, TimeUnit.MILLISECONDS);
+			try {
+				final List<MessageExt> msgs = this.messageQueue.poll(WAIT_FOR_NEXT_MESSAGE, TimeUnit.MILLISECONDS);
                 if (msgs == null) {
-                    return;
-                }             
-                
+                	return;
+                }
                 this.collector.emit(scheme.deserialize(msgs.get(0).getBody()), msgs.get(0).getMsgId());
-            }
-            catch (final InterruptedException e) {
+            } catch (final InterruptedException e) {
                 // interrupted while waiting for message, big deal
             }
         }	
