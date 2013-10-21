@@ -50,49 +50,49 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-client</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-common</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-broker</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-namesrv</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-remoting</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-research</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-store</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-tools</artifactId>
-			<version>3.0.0-beta8</version>
+			<version>3.0.0-final</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
