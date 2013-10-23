@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
-//import java.util.concurrent.LinkedTransferQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.LinkedTransferQueue;
+
 
 import com.alibaba.rocketmq.common.message.MessageExt;
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -35,8 +35,7 @@ public class RocketPushSpout extends BaseRichSpout {
 	
 	private transient ConcurrentHashMap<String, List<MessageExt>> id2wrapperMap;
 	private transient SpoutOutputCollector collector;
-	//private  LinkedTransferQueue<List<MessageExt>> messageQueue;
-	private  LinkedBlockingQueue<List<MessageExt>> messageQueue;
+	private  LinkedTransferQueue<List<MessageExt>> messageQueue;
 	private DefaultMQPushConsumer consumer;
 	/**
 	* Time in milliseconds to wait for a message from the queue if there is no
@@ -66,8 +65,7 @@ public class RocketPushSpout extends BaseRichSpout {
         }
         this.consumer = new DefaultMQPushConsumer();
         this.id2wrapperMap = new ConcurrentHashMap<String, List<MessageExt>>();
-        //this.messageQueue = new LinkedTransferQueue<List<MessageExt>>();
-        this.messageQueue = new LinkedBlockingQueue<List<MessageExt>>(200000);
+        this.messageQueue = new LinkedTransferQueue<List<MessageExt>>();
         try {
             this.collector = collector;
             this.setUpMeta(consumerGroup,nameServer,topic);
