@@ -9,23 +9,23 @@
 
 	<name>rocketmq-storm</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<licenses>
 		<license>
-		<name>The Apache Software License, Version 2.0</name>
-		<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		<distribution>repo</distribution>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
 		</license>
 	</licenses>
 
 	<repositories>
 		<repository>
-		<id>clojars.org</id>
-		<url>http://clojars.org/repo</url>
+			<id>clojars.org</id>
+			<url>http://clojars.org/repo</url>
 		</repository>
 		<repository>
-		<id>clojars.org</id>
-		<url>http://clojars.org/repo</url>
+			<id>repo1.maven.org</id>
+			<url>http://repo1.maven.org/maven2</url>
 		</repository>
 	</repositories>
 	<build>
@@ -35,11 +35,24 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.6</source>
+					<target>1.6</target>
 					<encoding>UTF-8</encoding>
 					<showDeprecation>true</showDeprecation>
 					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>com.rocketmq.community.storm.topology.TopologyTest</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -54,65 +67,85 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-client</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-common</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-broker</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-namesrv</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-remoting</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-research</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-store</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>rocketmq-tools</artifactId>
-			<version>3.0.0-final</version>
-			<scope>provided</scope>
+			<version>3.0.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.2.3</version>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.0.9.Final</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.2.3</version>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>1.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.2.3</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.taobao.gecko</groupId>
+			<artifactId>gecko</artifactId>
+			<version>1.1.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.36</version>
 		</dependency>
 	</dependencies>
 </project>
