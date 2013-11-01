@@ -32,7 +32,7 @@ public class RocketPushSpout extends BaseRichSpout {
 	public static final String NAMESERVER = "meta.NameServer";
 
 	private transient ConcurrentHashMap<String, List<MessageExt>> id2wrapperMap;
-	private transient SpoutOutputCollector collector;
+	private SpoutOutputCollector collector;
 	private LinkedTransferQueue<List<MessageExt>> messageQueue;
 	private DefaultMQPushConsumer consumer;
 	/**
